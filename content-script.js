@@ -1,0 +1,1 @@
+document.getElementById("radio2").checked=true;

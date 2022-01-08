@@ -1,0 +1,21 @@
+{
+    "name": "Unips SSO extension",
+    "description": "This extension allows you to autocomplete the login page for unipd sso",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background":{
+        "service_worker": "background.js"
+    },
+    "options_page":"options.html",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://shibidp.cca.unipd.it/idp/profile/SAML2/Redirect/SSO?execution=e1s2"],
+          "js": ["content-script.js"]
+        }
+    ]
+}
