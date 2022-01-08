@@ -1,3 +1,15 @@
+chrome.storage.sync.get("mail", function (result) {
+    console.log('Value currently is ' + result);
+    console.log(result.mail);
+    var mail = result.mail;
+    if (mail == "mail=@studenti.unipd.it") {
+
+        document.getElementById("studenti").checked = true;
+    } else {
+        document.getElementById("unipd").checked = true;
+    }
+});
+
 var form = document.querySelector("form");
 var log = document.querySelector("#log");
 

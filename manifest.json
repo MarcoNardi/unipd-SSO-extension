@@ -4,7 +4,7 @@
     "version": "1.0",
     "manifest_version": 3,
     "options_page":"options.html",
-    "permissions": ["storage", "activeTab", "scripting"],
+    "permissions": ["storage", "activeTab"],
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false
