@@ -24,7 +24,6 @@ form.addEventListener("change", function (event) {
     chrome.storage.sync.set({"mail": output}, function(){
         console.log("mail set to "+ output);
     });
-    output+=+ "\r";
     log.innerText = output;
     event.preventDefault();
 }, false);
