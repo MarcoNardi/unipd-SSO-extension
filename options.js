@@ -21,9 +21,13 @@ form.addEventListener("change", function (event) {
     for (const entry of data) {
         output = output + entry[0] + "=" + entry[1] ;
     };
-    chrome.storage.sync.set({"mail": output}, function(){
+    chrome.storage.sync.set({mail: output}, function(){
         console.log("mail set to "+ output);
     });
     log.innerText = output;
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        console.log("sending message");
+        chrome.tabs.sendMessage(tabs[0].id, output);
+      });
     event.preventDefault();
 }, false);

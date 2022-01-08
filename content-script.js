@@ -1,5 +1,17 @@
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        console.log(sender.tab ?
+            "from a content script:" + sender.tab.url :
+            "from the extension");
+        changeMail(request);
+        sendResponse({
+            farewell: "goodbye"
+        });
+        return true;
+    }
+);
 //select radio button based on email used
-function changeMail(mail){
+function changeMail(mail) {
     if (mail == "mail=@studenti.unipd.it") {
 
         document.getElementById("radio2").checked = true;
@@ -16,6 +28,7 @@ chrome.storage.sync.get("mail", function (result) {
     changeMail(mail);
 });
 
+/*
 //automatically update page if settings are changed
 chrome.storage.onChanged.addListener((changes, area) => {
     if (area === 'sync' && changes.mail?.newValue) {
@@ -24,12 +37,11 @@ chrome.storage.onChanged.addListener((changes, area) => {
         changeMail(mail);
     }
 });
-
-
+*/
 
 
 /*
-console.log(mail);
+        console.log(mail);
 if (mail == "mail=@studenti.unipd.it") {
 
     document.getElementById("radio2").checked = true;

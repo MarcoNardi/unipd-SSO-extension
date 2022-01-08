@@ -4,14 +4,14 @@
     "version": "1.0",
     "manifest_version": 3,
     "options_page":"options.html",
-    "permissions": ["storage", "activeTab"],
+    "permissions": ["storage", "activeTab", "tabs", "scripting"],
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false
     },
     "content_scripts": [
         {
-          "matches": ["https://shibidp.cca.unipd.it/idp/profile/SAML2/Redirect/SSO?execution=e1s2"],
+          "matches": ["https://shibidp.cca.unipd.it/*"],
           "js": ["content-script.js"]
         }
     ],
