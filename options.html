@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
-  </head>
-  <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Choose a different background color!</p>
-    </div>
-  </body>
+
+<head>
+	<link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+	<div id="buttonDiv">
+	</div>
+	<div>
+		<h4>Customize your settings:</h4>
+		<div>
+			<form>
+
+				<p>Select what type of email you have:</p>
+				<div>
+					<div>
+
+						<input type="radio" id="unipd" name="mail" value="@unipd.it">
+						<label for="unipd">@unipd.it</label>
+					</div>
+
+					<div>
+
+						<input type="radio" id="studenti" name="mail" value="@studenti.unipd.it" checked>
+						<label for="studenti">@studenti.unipd.it</label>
+					</div>
+				</div>
+			</form>
+		</div>
+		<pre id="log"></pre>
+	</div>
+	<script src="options.js"></script>
+</body>
+
 </html>
