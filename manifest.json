@@ -4,7 +4,7 @@
     "version": "0.1",
     "manifest_version": 3,
     "options_page":"options.html",
-    "permissions": ["storage", "activeTab", "tabs", "scripting"],
+    "permissions": ["storage", "tabs"],
     "options_ui": {
         "page": "options.html",
         "open_in_tab": false
@@ -18,5 +18,8 @@
     "action": {
         "default_title": "Click to config",
         "default_popup": "options.html"
-    }
+    },
+    "icons": { "16": "icon.png",
+        "48": "icon.png",
+       "128": "icon.png" }
 }
